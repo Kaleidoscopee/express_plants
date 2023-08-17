@@ -28,6 +28,11 @@ app.get('/hello/:firstname/:lastname', (req, res)=> {
     res.send(`hello ${req.params.firstname} ${req.params.lastname}`)
 })
 
+app.get('/tip/:total/:tipPercentage', (req, res)=> {
+    const tipAmount = req.params.total * req.params.tipPercentage / 100;
+    res.send(`Tip is $${tipAmount}.`);
+})
+
 
 app.get('/:id', (req, res)=> {
     //res.send(plants[0])
